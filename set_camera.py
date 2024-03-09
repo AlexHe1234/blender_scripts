@@ -20,7 +20,8 @@ def set_camera(k, r, t, w, h):
     camera.data.sensor_width = w
     
     scene.render.resolution_x = w
-    scene.render.resolution_y = h 
+    scene.render.resolution_y = h
+    scene.render.resolution_percentage = 100
     
     f = (k[0, 0] + k[1, 1]) / 2.
     camera.data.lens = f
