@@ -1,6 +1,7 @@
 import bpy
 import numpy as np
 
+
 def add_point_cloud(points):
     mesh = bpy.data.meshes.new(name="Point Cloud")
     mesh.from_pydata(points, [], [])
