@@ -16,11 +16,14 @@ def set_camera(k, r, t, w, h):
     scene = bpy.context.scene
     camera = scene.camera
     
-    f = (k[0, 0] + k[1, 1]) / 2.
-    camera.data.lens = f
-    
     camera.data.sensor_height = h
     camera.data.sensor_width = w
+    
+    scene.render.resolution_x = w
+    scene.render.resolution_y = h 
+    
+    f = (k[0, 0] + k[1, 1]) / 2.
+    camera.data.lens = f
 
     cam_pose = -r.T @ t
     camera.location = cam_pose
