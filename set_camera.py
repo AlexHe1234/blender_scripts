@@ -12,6 +12,8 @@ def r2blender(r: np.ndarray):
     return blender_camera_rotation
 
 
+# we don't recommend this since the h and w introduces too much error
+# please set camera manually and use that as calibration for everything else instead
 def set_camera(k, r, t, w, h):
     scene = bpy.context.scene
     camera = scene.camera

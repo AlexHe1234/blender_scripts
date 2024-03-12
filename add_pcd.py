@@ -13,11 +13,6 @@ def add_point_cloud(points):
     
     
 if __name__ == '__main__':
-    points_array = np.array([
-        [0, 0, 0],
-        [1, 1, 1],
-        [2, 2, 2],
-        [3, 3, 3]
-    ])
+    points_array = np.load("/Users/alexhe/Downloads/sport1_seq.npy")[0]
 
     add_point_cloud(points_array)

@@ -38,13 +38,14 @@ def add_animation(obj, rs, ts, fps=24):
 
 
 if __name__ == '__main__':
-    obj_name = 'glasses_geom'
-    se3_path = '/Users/alexhe/Documents/1Code/SceneTracker/se3_000026.npy'
+    objs = ['Cylinder', 'Cylinder.001', 'Cylinder.002', 'Cylinder.003', 'Plane', 'Sphere', 'Sphere.001']
+    se3_path = '/Users/alexhe/Desktop/se3_000026.npy'
     
     se3 = np.load(se3_path, allow_pickle=True).item()
     rs = se3['R']  # F, 3, 3
     ts = se3['T']  # F, 3
     
-    obj = bpy.data.objects.get(obj_name) 
+    for obj in objs:
+        obj_ = bpy.data.objects.get(obj) 
     
-    add_animation(obj, rs, ts)
+        add_animation(obj_, rs, ts)
